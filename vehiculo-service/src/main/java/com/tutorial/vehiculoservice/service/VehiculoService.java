@@ -4,6 +4,7 @@ import com.tutorial.vehiculoservice.entity.Vehiculo;
 import com.tutorial.vehiculoservice.repository.VehiculoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -15,6 +16,9 @@ public class VehiculoService {
 
     @Autowired
     private VehiculoRepository vehiculoRepository;
+
+    @Autowired
+    RestTemplate restTemplate;
 
     // Agregar un nuevo vehículo
     public Vehiculo saveVehiculo(Vehiculo vehiculo) {

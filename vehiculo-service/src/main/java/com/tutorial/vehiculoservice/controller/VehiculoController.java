@@ -27,7 +27,7 @@ import java.util.Optional;
 import java.util.HashMap;
 
 @RestController
-@RequestMapping("/api/vehiculo")
+@RequestMapping("/vehiculo")
 public class VehiculoController {
 
     @Autowired
@@ -76,6 +76,13 @@ public class VehiculoController {
     @GetMapping
     public ResponseEntity<Iterable<Vehiculo>> getAllVehiculos() {
         Iterable<Vehiculo> vehiculos = vehiculoService.findAllVehiculos();
+        return new ResponseEntity<>(vehiculos, HttpStatus.OK);
+    }
+
+    // Listar todos los vehículos los vehiculos
+    @GetMapping("/listar")
+    public ResponseEntity<List<Vehiculo>> listarVehiculos() {
+        List<Vehiculo> vehiculos = (List<Vehiculo>) vehiculoService.findAllVehiculos();
         return new ResponseEntity<>(vehiculos, HttpStatus.OK);
     }
 }
