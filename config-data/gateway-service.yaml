@@ -1,0 +1,62 @@
+server:
+  port: 8080
+  
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: student-service
+          uri: lb://student-service
+          predicates:
+            - Path=/student/**
+        - id: book-service
+          uri: lb://book-service
+          predicates:
+            - Path=/book/**
+        - id: pet-service
+          uri: lb://pet-service
+          predicates:
+            - Path=/pet/**
+
+
+
+
+        - id: descuento-bonos-service
+          uri: lb://descuento-bonos-service
+          predicates:
+            - Path=/descuentoBonos/**
+
+        - id: precio-reparacion-service
+          uri: lb://precio-reparacion-service
+          predicates:
+            - Path=/precioReparacion/**
+
+        - id: registro-de-reparaciones-service
+          uri: lb://registro-de-reparaciones-service
+          predicates:
+            - Path=/registroDeReparaciones/**
+
+        - id: reparacion-service
+          uri: lb://reparacion-service
+          predicates:
+            - Path=/reparacion/**
+
+        - id: vehiculo-service
+          uri: lb://vehiculo-service
+          predicates:
+            - Path=/vehiculo/**
+
+
+
