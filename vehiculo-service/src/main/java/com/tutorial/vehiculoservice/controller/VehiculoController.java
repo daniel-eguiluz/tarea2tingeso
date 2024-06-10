@@ -78,11 +78,4 @@ public class VehiculoController {
         Iterable<Vehiculo> vehiculos = vehiculoService.findAllVehiculos();
         return new ResponseEntity<>(vehiculos, HttpStatus.OK);
     }
-
-    // Listar todos los vehículos los vehiculos
-    @GetMapping("/listar")
-    public ResponseEntity<List<Vehiculo>> listarVehiculos() {
-        List<Vehiculo> vehiculos = (List<Vehiculo>) vehiculoService.findAllVehiculos();
-        return new ResponseEntity<>(vehiculos, HttpStatus.OK);
-    }
 }

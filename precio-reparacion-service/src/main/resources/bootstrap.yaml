@@ -8,8 +8,8 @@ spring:
   datasource:
     # url: jdbc:mysql://localhost:3306/bdmicros
     url: jdbc:postgresql://localhost:5432/gestion-auto-db
-    username: root
-    password: Chile&2022
+    username: postgres
+    password: password
   jpa:
     hibernate:
       ddl-auto: update

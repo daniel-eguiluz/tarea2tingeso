@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 // @RequestMapping("/api/descuentos-bonos")
-@RequestMapping("/descuentos-bonos")
+@RequestMapping("/descuento-bonos")
 public class DescuentoBonosController {
 
     @Autowired
@@ -53,7 +53,7 @@ public class DescuentoBonosController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
     // Listar todos los descuentos de bonos
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<Iterable<DescuentoBonos>> getAllDescuentosBonos() {
         Iterable<DescuentoBonos> descuentosBonos = descuentoBonosService.findAllDescuentosBonos();
         return new ResponseEntity<>(descuentosBonos, HttpStatus.OK);

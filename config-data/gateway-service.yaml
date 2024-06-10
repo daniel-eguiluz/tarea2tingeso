@@ -41,12 +41,12 @@ spring:
         - id: precio-reparacion-service
           uri: lb://precio-reparacion-service
           predicates:
-            - Path=/precioReparacion/**
+            - Path=/precio-reparacion/**
 
         - id: registro-de-reparaciones-service
           uri: lb://registro-de-reparaciones-service
           predicates:
-            - Path=/registroDeReparaciones/**
+            - Path=/registro-de-reparaciones-service/**
 
         - id: reparacion-service
           uri: lb://reparacion-service
