@@ -18,7 +18,7 @@ public class PrecioReparacionController {
     private PrecioReparacionService precioReparacionService;
 
     // Crear un nuevo precio de reparación
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<PrecioReparacion> createPrecioReparacion(@RequestBody PrecioReparacion precioReparacion) {
         PrecioReparacion newPrecioReparacion = precioReparacionService.savePrecioReparacion(precioReparacion);
         return new ResponseEntity<>(newPrecioReparacion, HttpStatus.CREATED);
@@ -60,7 +60,7 @@ public class PrecioReparacionController {
     }
 
     // Listar todos los precios de reparaciones
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<Iterable<PrecioReparacion>> getAllPreciosReparaciones() {
         Iterable<PrecioReparacion> preciosReparacion = precioReparacionService.findAllPreciosReparaciones();
         return new ResponseEntity<>(preciosReparacion, HttpStatus.OK);

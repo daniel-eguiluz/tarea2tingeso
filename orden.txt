@@ -1,0 +1,7 @@
+config-service
+
+eureka-service
+
+......-service
+
+gateway-service

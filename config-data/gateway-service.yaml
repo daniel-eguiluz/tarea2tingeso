@@ -46,7 +46,7 @@ spring:
         - id: registro-de-reparaciones-service
           uri: lb://registro-de-reparaciones-service
           predicates:
-            - Path=/registro-de-reparaciones-service/**
+            - Path=/registro-de-reparaciones/**
 
         - id: reparacion-service
           uri: lb://reparacion-service
@@ -57,6 +57,4 @@ spring:
           uri: lb://vehiculo-service
           predicates:
             - Path=/vehiculo/**
-
-
 
